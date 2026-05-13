@@ -464,6 +464,101 @@
     font-weight: 500;
   }
 
+  /* === COMODIDADES CERCANAS === */
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .nearby-card {
+    background: white;
+    border: 1px solid var(--line);
+    padding: 1.5rem 1rem;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .nearby-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(15, 61, 46, 0.08);
+    border-color: var(--gold-soft);
+  }
+
+  .nearby-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nearby-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .nearby-desc {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  .atm-block {
+    background: linear-gradient(135deg, var(--cream-warm) 0%, #E8DDC4 100%);
+    border-radius: 6px;
+    padding: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+
+  .atm-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .atm-icon {
+    font-size: 1.8rem;
+  }
+
+  .atm-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.2;
+  }
+
+  .atm-subtitle {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 0.1rem;
+  }
+
+  .atm-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .atm-bank {
+    background: white;
+    color: var(--green-deep);
+    padding: 0.5rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1px solid var(--line);
+  }
+
+  @media (min-width: 600px) {
+    .nearby-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
   /* === NOMBRE ANFITRIÓN === */
   .host-name {
     font-family: 'Cormorant Garamond', serif;
@@ -788,6 +883,58 @@
       <img src="mapa-residencial.jpeg" alt="Mapa de la residencial Quartier 7, Ciudad Marsella" loading="lazy">
     </div>
     <p class="map-caption">Quartier 7 — Ciudad Marsella · Entrada principal Q7</p>
+  </div>
+</section>
+
+<!-- COMODIDADES CERCANAS -->
+<section class="reveal">
+  <div class="section-header">
+    <div class="section-label">Cerca de aquí</div>
+    <h2 class="section-title">A unos pasos de <em>todo</em></h2>
+    <p class="section-intro">
+      En el centro comercial junto a la gasolinera UNO encontrará todo lo que pueda necesitar durante su estadía.
+    </p>
+  </div>
+
+  <div class="nearby-grid">
+    <div class="nearby-card">
+      <div class="nearby-icon">🛒</div>
+      <div class="nearby-name">Super Selectos</div>
+      <div class="nearby-desc">Supermercado para sus provisiones</div>
+    </div>
+
+    <div class="nearby-card">
+      <div class="nearby-icon">🛍️</div>
+      <div class="nearby-name">Dollar City</div>
+      <div class="nearby-desc">Productos variados para el hogar</div>
+    </div>
+
+    <div class="nearby-card">
+      <div class="nearby-icon">🍽️</div>
+      <div class="nearby-name">Opciones de comida</div>
+      <div class="nearby-desc">Variedad de restaurantes y comida rápida</div>
+    </div>
+
+    <div class="nearby-card">
+      <div class="nearby-icon">🧺</div>
+      <div class="nearby-name">Servicio de lavandería</div>
+      <div class="nearby-desc">Por si necesita lavar durante su estadía</div>
+    </div>
+  </div>
+
+  <div class="atm-block">
+    <div class="atm-header">
+      <span class="atm-icon">🏧</span>
+      <div>
+        <div class="atm-title">Cajeros automáticos disponibles</div>
+        <div class="atm-subtitle">En el mismo centro comercial</div>
+      </div>
+    </div>
+    <div class="atm-list">
+      <div class="atm-bank">Banco Agrícola</div>
+      <div class="atm-bank">Banco de Fomento Agropecuario</div>
+      <div class="atm-bank">Fedecrédito</div>
+    </div>
   </div>
 </section>
 
