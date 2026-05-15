@@ -272,6 +272,55 @@
     position: relative;
   }
 
+  /* === BLOQUE ALEXA === */
+  .alexa-block {
+    background: linear-gradient(135deg, #1a4d3a 0%, #2a6b52 100%);
+  }
+
+  .voice-examples {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.75rem;
+    position: relative;
+  }
+
+  .voice-card {
+    background: rgba(245, 241, 232, 0.08);
+    border: 1px solid rgba(212, 181, 133, 0.25);
+    border-radius: 6px;
+    padding: 1.1rem 1.25rem;
+    text-align: left;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .voice-card:hover {
+    background: rgba(245, 241, 232, 0.12);
+    border-color: rgba(212, 181, 133, 0.5);
+  }
+
+  .voice-card-stop {
+    border-color: rgba(212, 181, 133, 0.5);
+    background: rgba(184, 147, 90, 0.1);
+  }
+
+  .voice-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .voice-command {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--cream);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
   /* === RECOMENDACIONES (cuidados) === */
   .gentle-care {
     background: var(--cream-warm);
@@ -828,6 +877,30 @@
     <div class="feature-icon">🎬</div>
     <h3>Netflix sin restricciones</h3>
     <p>La Smart TV cuenta con nuestra cuenta de Netflix activa. Disfrute de su película o serie favorita sin necesidad de iniciar sesión.</p>
+  </div>
+</section>
+
+<!-- ALEXA + SPOTIFY -->
+<section class="reveal" style="padding-top: 0;">
+  <div class="feature-block alexa-block">
+    <div class="feature-icon">🎵</div>
+    <h3>Música con Alexa y Spotify</h3>
+    <p>Ambiente su estadía con la música que prefiera. Solo dele una indicación de voz a Alexa.</p>
+
+    <div class="voice-examples">
+      <div class="voice-card">
+        <div class="voice-label">Para escuchar un artista</div>
+        <div class="voice-command">"Alexa, pon música de Alejandro Fernández en Spotify"</div>
+      </div>
+      <div class="voice-card">
+        <div class="voice-label">Para una canción específica</div>
+        <div class="voice-command">"Alexa, pon [nombre de la canción] en Spotify"</div>
+      </div>
+      <div class="voice-card voice-card-stop">
+        <div class="voice-label">Para detener la música</div>
+        <div class="voice-command">"Alexa, quita la música"</div>
+      </div>
+    </div>
   </div>
 </section>
 
