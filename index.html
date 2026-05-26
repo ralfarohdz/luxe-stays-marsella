@@ -205,6 +205,68 @@ body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--t
 /* ═══ DIVIDER ═══ */
 .divider { height: 1px; background: var(--border); max-width: 120px; margin: 0 auto; }
 
+/* ═══ ALEXA GUIDE ═══ */
+.alexa-band { background: var(--bg-warm); padding: 3.5rem 1.5rem; }
+.alexa-wrap { max-width: 680px; margin: 0 auto; }
+
+.alexa-groups { display: grid; gap: .6rem; }
+
+.alexa-group {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.alexa-group-title {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .85rem 1.2rem;
+  background: var(--bg-mint);
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.cmd-list { padding: .5rem 0; }
+
+.cmd-row {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  padding: .6rem 1.2rem;
+  border-bottom: 1px solid var(--bg-warm);
+  flex-wrap: wrap;
+}
+
+.cmd-row:last-child { border-bottom: none; }
+
+.cmd-action {
+  flex-shrink: 0;
+  min-width: 120px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+}
+
+.cmd-voice {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+@media(min-width:600px) {
+  .alexa-groups { grid-template-columns: repeat(2, 1fr); }
+  .alexa-group:nth-child(3) { grid-column: 1 / -1; }
+}
+
 /* ═══ MAP ═══ */
 .map-band { background: var(--white); padding: 3.5rem 1.5rem; }
 .map-wrap { max-width: 680px; margin: 0 auto; }
@@ -336,14 +398,131 @@ footer .sig { font-family: 'Playfair Display', serif; font-style: italic; font-s
       <p>La Smart TV tiene nuestra cuenta activa. Disfrute su película o serie favorita sin iniciar sesión.</p>
     </div>
     <div class="feature-card">
-      <div class="f-icon">🎵</div>
-      <h3>Música con Alexa</h3>
-      <p>Ambiente su estadía con la música que prefiera, solo hable.</p>
-      <div class="voice-list">
-        <div class="voice-item"><small>Escuchar un artista</small><q>Alexa, pon música de Alejandro Fernández en Spotify</q></div>
-        <div class="voice-item"><small>Una canción específica</small><q>Alexa, pon [nombre de la canción] en Spotify</q></div>
-        <div class="voice-item"><small>Detener la música</small><q>Alexa, quita la música</q></div>
+      <div class="f-icon">🏠</div>
+      <h3>Casa inteligente</h3>
+      <p>Controle luces, aire acondicionado, televisión y música con su voz. Vea la guía completa de comandos más abajo.</p>
+    </div>
+  </div>
+</div>
+
+<!-- GUÍA ALEXA -->
+<div class="alexa-band reveal">
+  <div class="alexa-wrap">
+    <div class="section-header">
+      <div class="section-tag">Control por voz</div>
+      <h2 class="section-title">Guía de comandos <em>Alexa</em></h2>
+      <p class="section-desc">Controle todo en la casa con su voz. Diga cualquiera de estos comandos y Alexa lo hará por usted.</p>
+    </div>
+
+    <div class="alexa-groups">
+
+      <!-- AIRE ACONDICIONADO -->
+      <div class="alexa-group">
+        <div class="alexa-group-title"><span>❄️</span> Aire acondicionado</div>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <span class="cmd-action">Encender</span>
+            <span class="cmd-voice">"Alexa, enciende el aire acondicionado"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Temperatura</span>
+            <span class="cmd-voice">"Alexa, pon temperatura 20"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Apagar</span>
+            <span class="cmd-voice">"Alexa, apaga el aire acondicionado"</span>
+          </div>
+        </div>
       </div>
+
+      <!-- TELEVISIÓN -->
+      <div class="alexa-group">
+        <div class="alexa-group-title"><span>📺</span> Televisión</div>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <span class="cmd-action">Encender</span>
+            <span class="cmd-voice">"Alexa, enciende la televisión"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Apagar</span>
+            <span class="cmd-voice">"Alexa, apaga la televisión"</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LUCES -->
+      <div class="alexa-group">
+        <div class="alexa-group-title"><span>💡</span> Luces</div>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <span class="cmd-action">Cochera — encender</span>
+            <span class="cmd-voice">"Alexa, enciende la luz de la cochera"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Cochera — apagar</span>
+            <span class="cmd-voice">"Alexa, apaga la luz de la cochera"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Sala — encender</span>
+            <span class="cmd-voice">"Alexa, enciende la luz de la entrada"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Sala — apagar</span>
+            <span class="cmd-voice">"Alexa, apaga la luz de la entrada"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Comedor — encender</span>
+            <span class="cmd-voice">"Alexa, enciende la luz del comedor"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Comedor — apagar</span>
+            <span class="cmd-voice">"Alexa, apaga la luz del comedor"</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÚSICA Y RADIO -->
+      <div class="alexa-group">
+        <div class="alexa-group-title"><span>🎵</span> Música y radio</div>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <span class="cmd-action">Por artista</span>
+            <span class="cmd-voice">"Alexa, pon música de Alejandro Fernández en Spotify"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Por canción</span>
+            <span class="cmd-voice">"Alexa, pon la canción [nombre] en Spotify"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Detener</span>
+            <span class="cmd-voice">"Alexa, quita la música"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Radio</span>
+            <span class="cmd-voice">"Alexa, pon la Urbana FM"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Detener radio</span>
+            <span class="cmd-voice">"Alexa, quita la música"</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALARMA -->
+      <div class="alexa-group">
+        <div class="alexa-group-title"><span>⏰</span> Alarma</div>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <span class="cmd-action">Poner alarma</span>
+            <span class="cmd-voice">"Alexa, pon una alarma a las 7:00 AM"</span>
+          </div>
+          <div class="cmd-row">
+            <span class="cmd-action">Cancelar alarma</span>
+            <span class="cmd-voice">"Alexa, quita la alarma"</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
